@@ -50,7 +50,9 @@ const MainVisual = () => {
         {
           SLIDE.map((el, idx) => {
             return (
-              <li key={el.id} className={idx === IDX ? "on" : ""} onClick={() => mainSlide.current.slickGoTo(idx)}>{el.title}</li>
+              <li key={el.id} className={idx === IDX ? "on" : ""} onClick={() => mainSlide.current.slickGoTo(idx)}>
+                {el.title}
+              </li>
             )
           })
         }
