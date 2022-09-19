@@ -861,6 +861,7 @@
   padding: 0 0 0 30px;
 }
 
-.ServiceLink .subLink.on{
+.ServiceLink .subLink.on {
   display: flex;
-} 
+}
+

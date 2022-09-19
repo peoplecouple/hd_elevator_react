@@ -33,21 +33,14 @@ const SERVICE = [
 
 export const ServiceLink = () => {
   const [LINK, setLINK] = useState()
-  const [TOGGLE, setTOGGLE] = useState()
-  const [TABLIC, setTABLIC] = useState()
-  const TABLI = useRef()
+  const [TOGGLE, setTOGGLE] = useState(false)
 
   useEffect(() => {
-    setTABLIC(TABLI.current)
-  }, [])
+    setTOGGLE(true)
+  }, [LINK])
+  //LINK를 감지해서 변하면 (탭이 바뀌면) toggle의 기본 셋팅이 true로 바뀐다
 
-  // setTOGGLE(() => {
-  //   if (TABLIC.classList.contains('on')) {
-  //     return (!TOGGLE)
-  //   } else {
-  //     return (TOGGLE)
-  //   }
-  // })
+
 
   return (
     <ul className="ServiceLink">
@@ -55,10 +48,14 @@ export const ServiceLink = () => {
         SERVICE.map((el, idx) => {
           return (
             <li key={el.id}>
-              <div ref={TABLI} className={"title" + (TOGGLE && LINK === idx ? " on" : "")}
-                onClick={() => { setLINK(idx); setTOGGLE((TABLIC.classList.contains('on')) ? false : true); console.log(idx, TOGGLE) }}>
+              <div className={"title " + ((LINK === idx && TOGGLE) ? 'on' : '')}
+                onClick={() => {
+                  setLINK(idx)
+                  setTOGGLE(!TOGGLE)
+                  console.log(TOGGLE)
+                }}>
                 {el.title}</div>
-              <ul className={"subLink" + (TOGGLE && LINK === idx ? " on" : "")}>
+              <ul className={"subLink " + ((LINK === idx && TOGGLE) ? 'on' : '')}>
                 {
                   el.sub.map((sub, idx) => {
                     return (
@@ -71,6 +68,54 @@ export const ServiceLink = () => {
           )
         })
       }
-    </ul>
+    </ul >
   )
 }
+
+export default ServiceLink
+
+
+
+// export const ServiceLink = () => {
+//   const [LINK, setLINK] = useState()
+//   const [TOGGLE, setTOGGLE] = useState()
+//   const [TABLIC, setTABLIC] = useState()
+//   const TABLI = useRef()
+
+//   useEffect(() => {
+//     setTABLIC(TABLI.current)
+//   }, [])
+
+//   // setTOGGLE(() => {
+//   //   if (TABLIC.classList.contains('on')) {
+//   //     return (!TOGGLE)
+//   //   } else {
+//   //     return (TOGGLE)
+//   //   }
+//   // })
+
+//   return (
+//     <ul className="ServiceLink">
+//       {
+//         SERVICE.map((el, idx) => {
+//           return (
+//             <li key={el.id}>
+//               <div ref={TABLI} className={"title" + (TOGGLE && LINK === idx ? " on" : "")}
+//                 onClick={() => { setLINK(idx); setTOGGLE((TABLIC.classList.contains('on')) ? false : true);}}>
+//                 {el.title}</div>
+//               <ul className={"subLink" + (TOGGLE && LINK === idx ? " on" : "")}>
+//                 {
+//                   el.sub.map((sub, idx) => {
+//                     return (
+//                       <li key={idx}>{sub.title}</li>
+//                     )
+//                   })
+//                 }
+//               </ul>
+//             </li>
+//           )
+//         })
+//       }
+//     </ul>
+//   )
+// }

@@ -1,5 +1,5 @@
-import { FamilyLink } from "./FamilyLink"
-import { ServiceLink } from "./ServiceLink"
+import FamilyLink from "./FamilyLink"
+import ServiceLink from "./ServiceLink"
 
 const Footer = () => {
   return (
@@ -18,7 +18,9 @@ const Footer = () => {
       </div>
       <div className="ft_bottom">
         <div className="inner">
-          <address className="left"></address>
+          <address className="left">
+
+          </address>
           <div className="right">
             <FamilyLink />
           </div>

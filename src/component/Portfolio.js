@@ -14,17 +14,20 @@ const PTF = [
   { id: 9, title: '롯데월드몰' },
 ];
 
-const NPTF = [
-  { id: 9, title: '롯데월드몰' },
-  { id: 1, title: '서울시청' },
-  { id: 2, title: '서울드래곤시티(용산호텔)' },
-  { id: 3, title: '부산 파크하얏트' },
-  { id: 4, title: '송도 G 타워' },
-  { id: 5, title: '파라다이스시티호텔' },
-  { id: 6, title: '명동 대신증권 신사옥' },
-  { id: 7, title: '부산국제금융센터(BIFC)' },
-  { id: 8, title: 'LG U+ 신사옥' },
-];
+const NPTF = [...PTF, PTF[0]].splice(1, PTF.length)
+
+
+// const NPTF = [
+//   { id: 9, title: '롯데월드몰' },
+//   { id: 1, title: '서울시청' },
+//   { id: 2, title: '서울드래곤시티(용산호텔)' },
+//   { id: 3, title: '부산 파크하얏트' },
+//   { id: 4, title: '송도 G 타워' },
+//   { id: 5, title: '파라다이스시티호텔' },
+//   { id: 6, title: '명동 대신증권 신사옥' },
+//   { id: 7, title: '부산국제금융센터(BIFC)' },
+//   { id: 8, title: 'LG U+ 신사옥' },
+// ];
 
 const Portfolio = () => {
   const [LSS, setLSS] = useState();

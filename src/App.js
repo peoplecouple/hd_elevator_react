@@ -4,12 +4,15 @@ import Header from './component/Header';
 import MainContent from './component/MainContent';
 import MainVisual from './component/MainVisual';
 import News from './component/News';
+import Popup from './component/Popup';
 import Portfolio from './component/Portfolio';
 import Promotion from './component/Promotion';
 import Solution from './component/Solution';
+import ToTop from './component/ToTop';
+import Wrapper from './component/Wrapper';
 const App = () => {
   return (
-    <div className="Wrap">
+    <Wrapper>
       <Header />
       <main>
         <MainVisual />
@@ -20,7 +23,9 @@ const App = () => {
         <News />
       </main>
       <Footer />
-    </div>
+      <ToTop />
+      <Popup />
+    </Wrapper>
   );
 }
 
