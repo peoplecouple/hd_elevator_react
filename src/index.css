@@ -11,6 +11,7 @@ font
 */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
 @import url('https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
 /* 슬릭 깜박임 해결:브라우즈 업데이트 문제였음 */
 .slick-track,
@@ -40,11 +41,11 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Noto Sans KR';
+  font-family: 'Pretendard';
   font-weight: normal;
   line-height: 1;
   letter-spacing: -0.025em;
-  color: #444;
+  color: #222222;
 }
 
 ul,

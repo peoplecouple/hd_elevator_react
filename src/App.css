@@ -812,6 +812,13 @@
   margin: 0 0 0 5px;
 }
 
+
+.Footer .ft_bottom {
+  padding: 30px 0;
+  line-height: 1.45;
+}
+
+
 .ServiceLink {
   display: flex;
   gap: 50px;
@@ -864,4 +871,3 @@
 .ServiceLink .subLink.on {
   display: flex;
 }
-

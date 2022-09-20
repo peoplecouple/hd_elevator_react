@@ -1,48 +1,67 @@
 //import { CookiesProvider } from 'react-cookie'; 쿠키를 쓰면 바깥 컴포넌트를 <CookiesProvider>이거로 싸줘야한다.</CookiesProvider>
 
 
-import React from 'react'
-import { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react';
 import { useCookies } from 'react-cookie';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const Pop = styled.div`
 position: fixed;
-top : 50%;
-left : 50%;
-transform : translate(-50%, -50%);
-background:#fff;
-z-index:9999;
-
+top: 0;
+left: 0;
+right: 0;
+height: 100vh;
+background: rgba(0,0,0,0.5);
+z-index:99999;
 &.on {
-  display:none;
+    display: none;
 }
-
-& button{
-  float:right;
+button {
+    float: right;
+}
+.popbox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background: #fff;
 }
 `
-
 const Popup = () => {
-  const [TG, setTG] = useState(false)
+  const [TG, setTG] = useState();
   const [cookie, setCookie] = useCookies();
+  const pop = useRef(null);
 
-  let now = new Date();
+  const whellstop = e => {
+    e.preventDefault();
+  }
+
+  useEffect(() => {
+    pop.current.addEventListener('wheel', whellstop);
+    return () => {
+      pop.current.removeEventListener('wheel', whellstop);
+    }
+  }, [])
+
   let after = new Date();
+
   return (
-    <Pop className={(cookie.name) && "on"}>
-      <div>
-        <img src={process.env.PUBLIC_URL + "/assets/images/main_news02.jpg"} alt="" />
-      </div>
-      <div className="bottom">
-        <input type='checkbox' onChange={
-          () => {
-            after.setMinutes(now.getMinutes() + 1) // after는 지금시간에서 1분을 더한 시간
-            setCookie('name', 'pop', { path: '/', expires: after }) // expires에 after시간을 넣어주면 그때 쿠키가 사라짐
-          }
-        } />
-        오늘 하루 열지 않기
-        <button onClick={() => setTG(true)}>close</button>
+
+    <Pop className={(cookie.pop || TG) && 'on'} ref={pop}>
+      <div className="popbox">
+        <div>
+          <img src={process.env.PUBLIC_URL + '/assets/images/main_news02.jpg'} alt="" />
+        </div>
+        <div className="bottom">
+          <input type='checkbox' onChange={
+            () => {
+              after.setMinutes(after.getMinutes() + 1)
+              setCookie('pop', 'pop', { path: '/', expires: after })
+            }
+          } />
+          오늘 하루 열지 않기.
+          <button onClick={() => setTG(true)}>Close</button>
+        </div>
       </div>
 
     </Pop>
