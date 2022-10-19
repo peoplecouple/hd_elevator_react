@@ -32,14 +32,14 @@ const Popup = () => {
   const [cookie, setCookie] = useCookies();
   const pop = useRef(null);
 
-  const whellstop = e => {
+  const wheelstop = e => {
     e.preventDefault();
   }
 
   useEffect(() => {
-    pop.current.addEventListener('wheel', whellstop);
+    pop.current.addEventListener('wheel', wheelstop);
     return () => {
-      pop.current.removeEventListener('wheel', whellstop);
+      pop.current.removeEventListener('wheel', wheelstop);
     }
   }, [])
 
@@ -55,7 +55,7 @@ const Popup = () => {
         <div className="bottom">
           <input type='checkbox' onChange={
             () => {
-              after.setMinutes(after.getMinutes() + 1)
+              after.setMinutes(after.getMinutes() + 5)
               setCookie('pop', 'pop', { path: '/', expires: after })
             }
           } />
