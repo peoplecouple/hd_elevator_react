@@ -459,6 +459,7 @@
 .Portfolio .arrows i {
   padding: 10px;
   font-size: 30px;
+  cursor: pointer;
 }
 
 .Portfolio .arrows i~i {
@@ -603,10 +604,12 @@
 
 .Solution .arrows i:first-child {
   margin: 0 0 0 -600px;
+  cursor: pointer;
 }
 
 .Solution .arrows i:last-child {
   margin: 0 0 0 600px;
+  cursor: pointer;
 }
 
 .Solution .dots {
@@ -632,7 +635,7 @@
   opacity: 0.5;
 }
 
-0 .Solution .solution_slide figure.on {
+.Solution .solution_slide figure.on {
   opacity: 1;
   transition: 0.5s;
 }

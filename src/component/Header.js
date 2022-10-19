@@ -2,11 +2,11 @@ import { useState, useRef, useEffect } from "react";
 import TopBanner from "./TopBanner";
 
 const NAVLINK = [
-  { id: 1, menu: "기업정보", link: '/' },
-  { id: 2, menu: "솔루션", link: '/' },
-  { id: 3, menu: "서비스", link: '/' },
-  { id: 4, menu: "혁신기술", link: '/' },
-  { id: 5, menu: "고객지원", link: '/' },
+  { id: 1, menu: "기업정보", link: '#!' },
+  { id: 2, menu: "솔루션", link: '#!' },
+  { id: 3, menu: "서비스", link: '#!' },
+  { id: 4, menu: "혁신기술", link: '#!' },
+  { id: 5, menu: "고객지원", link: '#!' },
 ]
 
 const Header = () => {
