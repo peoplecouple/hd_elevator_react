@@ -5,7 +5,6 @@
 import styled from "styled-components";
 import gsap from "gsap";
 import ScrollToPlugin from 'gsap/ScrollToPlugin'
-import classNames from "classnames"
 import { useEffect } from "react";
 import { useState } from "react";
 
