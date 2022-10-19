@@ -2,7 +2,7 @@
   "name": "hd_elevator_react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://peoplecouple.github.io/hd_elevator_jquery/",
+  "homepage": "https://peoplecouple.github.io/hd_elevator_react/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
