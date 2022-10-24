@@ -16,16 +16,21 @@ z-index:99999;
 &.on {
     display: none;
 }
-button {
-    float: right;
-}
 .popbox {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     background: #fff;
+    
+    & button{
+      float: right;
+      border: none;
+      background: #008850;
+      color: #fff;
+    }
 }
+
 `
 const Popup = () => {
   const [TG, setTG] = useState();
